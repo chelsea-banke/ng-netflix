@@ -152,7 +152,7 @@ span{
     display: block;
 } 
 
-footer {
+/* footer {
     background-color: black;
     margin-top: 10px;
     color: rgb(92, 92, 92);
@@ -181,7 +181,7 @@ a{
 }
 a:hover {
     text-decoration: underline;
-}
+} */
 @media screen and (max-width: 991px) {
     .sec-left, .sec-right{
         margin: auto;
