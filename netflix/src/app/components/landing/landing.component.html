@@ -1,0 +1,97 @@
+<section id="sec-1">
+    <div id="top-layer">
+        <header>
+            <img id="logo" src="../../../assets/images/logo.png" alt="Netflix">
+            <button id="sign-btn" class="btn btn-danger">Sign In</button>
+        </header>
+        <section id="intro">
+            <h1 class="m-text">Unlimited movies, TV <br> shows, and more.</h1>
+            <p class="next">Watch anywhere. Cancel anytime.</p>
+            <p id="ready">Ready to watch? Enter your email to create or restart your membership.</p>
+            <div class="email">
+                <input class="input" placeholder="  Email adress">
+                <button class="btn btn-danger started">Get Started ></button>
+            </div>
+        </section>
+    </div>
+</section>
+
+<section class="row" id="tv-sec">
+    <div class="col-md-6 text-sec">
+        <div class="sec-left">
+            <h1 class="m-text">Enjoy on your TV.</h1>
+            <p class="next">Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <img src="../../../assets/images/tv.png" alt="">
+    </div>
+</section>
+
+<section class="row rev" id="mobile-sec">
+    <div class="col-lg-6">
+        <img id="mobile" src="../../../assets/images/mobile-0819.jpg" alt="mobile-0819">
+        <div id="download">
+            <img src="../../../assets/images/boxshot.png" alt="">
+            <p>Downloading...</p>
+        </div>
+    </div>
+    <div class="col-md-6 text-sec">
+        <div class="sec-right">
+            <h1 class="m-text">Download your shows to watch offline.</h1>
+            <p class="next">Save your favorites easily and always have something to watch.</p>
+        </div>
+    </div>
+</section>
+
+<section class="row">
+    <div class="col-md-6 text-sec">
+        <div class="sec-left">
+            <h1 class="m-text">Create profiles for kids.</h1>
+            <p class="next">Send kids on adventures with their favorite characters in a space made just for them—free with your membership.</p>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <img src="../../../assets/images/kidsValueProp.png" alt="">
+    </div>
+</section>
+
+<section id="sec-end">
+    <h1 class="m-text">Frequently Asked Questions</h1><br>
+    <div *ngFor="let qa of qas">
+        <div class="q-a q">{{ qa['question'] }}<span>+</span></div>
+        <div class="q-a a">{{ qa['answer'] }}</div>
+    </div><br><br>
+    <p class="next">Ready to watch? Enter your email to create or restart your membership.
+    </p>
+
+    <div class="email">
+        <input class="input" placeholder="  Email adress">
+        <button class="btn btn-danger started">Get Started ></button>
+    </div>
+</section>
+
+<footer>
+    <p><a href="">Questions? Contact Us</a></p>
+    <br>
+    <div>
+        <ul id="links">
+            <li><a href="">FAQ</a></li>
+            <li><a href="">Help Center</a></li>
+            <li><a href="">Account</a></li>
+            <li><a href="">Media Center</a></li>
+            <li><a href="">Investor Relations</a></li>
+            <li><a href="">Jobs</a></li>
+            <li><a href="">Ways to Watch</a></li>
+            <li><a href="">Terms of Use</a></li>
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Cookie Preferences</a></li>
+            <li><a href="">Corporate Information</a></li>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Speed Test</a></li>
+            <li><a href="">Legal Notices</a></li>
+            <li><a href="">Only On Netflix</a></li>
+        </ul>
+    </div>
+    <p>Netflix Cameroon</p>
+</footer>
