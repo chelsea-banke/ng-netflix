@@ -143,6 +143,7 @@ span{
     margin-top: 10px;
 }
 .a{
+    cursor: pointer;
     display: none;
     margin-top: 2px;
     animation: answer-display 10s;
@@ -152,36 +153,6 @@ span{
     display: block;
 } 
 
-/* footer {
-    background-color: black;
-    margin-top: 10px;
-    color: rgb(92, 92, 92);
-    padding: 25px;
-}
-footer p{
-    margin: auto;
-    width: 80%;
-}
-#links{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-}
-li {
-    list-style: none;
-    margin-left: 10px;
-    width: 30%;
-    padding-bottom: 10px;
-}
-a{
-    color: rgb(92, 92, 92);
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-} */
 @media screen and (max-width: 991px) {
     .sec-left, .sec-right{
         margin: auto;
@@ -241,8 +212,14 @@ a:hover {
         margin-top: -100px;
         opacity: 0;
     }
-    10%{
+    5%{
         margin-top: 2px;
+        opacity: 0;
+    }
+    6%{
+        opacity: 1;
+    }
+    20%{
         opacity: 1;
     }
     100%{margin-top: 2px;}

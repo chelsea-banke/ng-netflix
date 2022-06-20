@@ -77,3 +77,24 @@ footer{
     background-color: white;
     height: 50px;
 }
+
+@media screen and (max-width: 450px) {
+    form{
+        margin: auto;
+        position: relative;
+        width: 100%;
+        top: 10%;
+        border-radius: 0px;
+        left: 0px;
+    }
+    section{
+        height: 125vh;   
+    }
+    .links{
+        margin-left: -55px;
+    }
+    form h2{
+        width: 2%;
+        text-align: left;
+    }
+}
