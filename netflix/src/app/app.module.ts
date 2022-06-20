@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    SignInComponent
+    SignInComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +21,8 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     RouterModule.forRoot([
       { path: 'welcome', component: LandingComponent},
       { path: 'sign-in', component: SignInComponent  },
-      { path: '', redirectTo: 'welcome', pathMatch: 'full'},
+      { path: 'user', component: UserComponent },
+      { path: '', redirectTo: 'user', pathMatch: 'full'},
     ])
   ],
   providers: [],

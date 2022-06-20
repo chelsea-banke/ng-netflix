@@ -13,4 +13,7 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  loginUser(){
+    this.routeSwitch.switch('/user')
+  }
 }
