@@ -22,7 +22,7 @@ import { UserComponent } from './components/user/user.component';
       { path: 'welcome', component: LandingComponent},
       { path: 'sign-in', component: SignInComponent  },
       { path: 'user', component: UserComponent },
-      { path: '', redirectTo: 'user', pathMatch: 'full'},
+      { path: '', redirectTo: 'welcome', pathMatch: 'full'},
     ])
   ],
   providers: [],
