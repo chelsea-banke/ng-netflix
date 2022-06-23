@@ -1,0 +1,9 @@
+img{
+    width: 500px;
+}
+.barnner{
+    width: 100%;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
+}

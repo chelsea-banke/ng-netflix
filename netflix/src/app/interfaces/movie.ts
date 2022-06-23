@@ -1,0 +1,20 @@
+export interface Movie {
+    title: string,
+    id: number,
+    imdb_id: string,
+    adult: boolean,
+    poster_path: string,
+    backdrop_path: string,
+    video: boolean,
+    budget: number,
+    homepage: string,
+    original_language: string,
+    original_title: string,
+    overview: string,
+    popularity: number,
+    release_date: string,
+    spoken_languages: string[],
+    status: string,
+    tagline: string,
+    vote_average: number
+}
