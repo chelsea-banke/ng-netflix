@@ -7,17 +7,17 @@ import { TmdbService } from 'src/app/services/tmdb.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  movie: any;
-  backdropImg = '';
+  Trending: any;
+  backdropImg: string = '';
+  disInt: number = 0;
 
   constructor(private tmdbService: TmdbService) { }
 
   ngOnInit() {
-    this.tmdbService.getSample().then((data) => {
-      this.movie = data;
-      this.backdropImg = "url('https://image.tmdb.org/t/p/w500//" + this.movie['backdrop_path'] + "')";
-      console.log(this.backdropImg);
+    this.tmdbService.getTrending().then((data) => {
+      this.Trending = data;
+      this.disInt = Math.floor(Math.random() * (this.Trending['results'].length));
+      this.backdropImg = 'https://image.tmdb.org/t/p/w1280//' + this.Trending['results'][this.disInt]['backdrop_path'];
     });
   }
-
 }
