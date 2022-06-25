@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit} from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { TmdbService } from 'src/app/services/tmdb.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
   backdropImg: string = '';
   disInt: number = 0;
 
-  constructor(private tmdbService: TmdbService) { }
+  constructor(private tmdbService: TmdbService,@Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit() {
     this.tmdbService.getTrending().then((data) => {
@@ -20,4 +21,22 @@ export class HomeComponent implements OnInit {
       this.backdropImg = 'https://image.tmdb.org/t/p/w1280//' + this.Trending['results'][this.disInt]['backdrop_path'];
     });
   }
+
+  scroll(dirrection: string, id: string){
+    const elm = this.document.getElementById(id)
+    if (dirrection == 'left'){
+      elm?.scrollBy({
+        left: -500,
+        behavior: 'smooth'
+      })      
+    }
+    else if (dirrection == 'right'){
+      elm?.scrollBy({
+        left: 500,
+        behavior: 'smooth'
+      })  
+    }
+    else{ console.log(`invalid dirrection ${dirrection}`) }
+  }
+
 }

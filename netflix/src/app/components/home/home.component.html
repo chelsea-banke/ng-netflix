@@ -2,13 +2,25 @@
     <img [src]="backdropImg" alt="">
     <div id="top-layer">
         <div id="barnner-text">
-            <h1 class="display-1">{{ Trending['results'][disInt]['original_title'] }}</h1>
-            <h1 class="display-1">{{ Trending['results'][disInt]['name'] }}</h1><hr>
+            <h1 class="display-6">{{ Trending['results'][disInt]['original_title'] }}</h1>
+            <h1 class="display-6">{{ Trending['results'][disInt]['name'] }}</h1><hr>
             <p>{{ Trending['results'][disInt]['overview'] }}</p>
         </div>
     </div>
     <div id="btns">
         <button class="btn"> <img src="../../../assets/images/icons8-play-60.png" alt="">  Play</button>
         <button class="btn"> <img src="../../../assets/images/info--v1.png" alt="">  More Info</button>
+    </div>
+</section>
+<section id="content">
+    <div>
+        <h2>Trending Now</h2>
+        <div class="carr">
+            <button class="btn" id="s-left" (click)="scroll('left', 'trending')">&lt;</button>
+            <button class="btn" id="s-right" (click)="scroll('right', 'trending')">&gt;</button>
+            <ul id="trending">
+                <li *ngFor="let movie of Trending['results']"><a href=""><img [src]="'https://image.tmdb.org/t/p/w1280//'+movie['backdrop_path']" alt=""></a></li>
+            </ul>
+        </div>
     </div>
 </section>
