@@ -29,7 +29,9 @@ import { HomeComponent } from './components/home/home.component';
       { path: '', redirectTo: 'user', pathMatch: 'full'},
     ])
   ],
-  providers: [],
+  providers: [{
+    provide: 'Window', useValue: window
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

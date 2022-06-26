@@ -29,6 +29,7 @@
     position: absolute;
     background-color: rgba(0, 0, 0, 0.603);
     padding: 20px;
+    border-left: 1px solid white;
 }
 
 #barnner-text p{
@@ -56,6 +57,7 @@
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.637);
     border-radius: 0px;
+    z-index: 10;
 }
 #s-right{
     right: 0px;   
@@ -92,16 +94,25 @@ ul::-webkit-scrollbar-thumb{
 }
 
 li{
+    position: relative;
     margin: auto;
     margin-left: 5px;
     display: inline;
     width: fit-content;
 }
+li p{
+    position: absolute;
+    left: 0px;
+    max-width: 80%;
+    top: 25px;
+    background-color: rgba(0, 0, 0, 0.774);
+    overflow-x: hidden;
+}   
 li img{
     width: 24%;
 }
-li img:hover{
-    width: 25%;
+li:hover img{
+    width: 30%;
     margin-top: -15px;
     /* z-index: 5; */
     /* position: absolute; */
@@ -139,6 +150,11 @@ li img:hover{
         font-size: medium;
     }
 }
+@media screen and (max-width: 765px) {
+    #content{
+        margin-top: -75px;
+    }
+}
 @media screen and (max-width: 660px) {
     #barnner-text h1{
         font-size: 30px;
@@ -165,6 +181,9 @@ li img:hover{
     }
     .btn img{
         width: 20px;
+    }
+    #content{
+        margin-top: -30px;
     }
 }
 @media screen and (max-width: 500px) {

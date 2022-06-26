@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   backdropImg: string = '';
   disInt: number = 0;
 
-  constructor(private tmdbService: TmdbService,@Inject(DOCUMENT) private document: Document) { }
+  constructor(private tmdbService: TmdbService,@Inject(DOCUMENT) private document: Document,@Inject('Window') private window: any) { }
 
   ngOnInit() {
     this.tmdbService.getTrending().then((data) => {
@@ -23,16 +23,17 @@ export class HomeComponent implements OnInit {
   }
 
   scroll(dirrection: string, id: string){
+    const moveBy = this.window.screen.width/1.2;
     const elm = this.document.getElementById(id)
     if (dirrection == 'left'){
       elm?.scrollBy({
-        left: -500,
+        left: -moveBy,
         behavior: 'smooth'
       })      
     }
     else if (dirrection == 'right'){
       elm?.scrollBy({
-        left: 500,
+        left: moveBy,
         behavior: 'smooth'
       })  
     }
