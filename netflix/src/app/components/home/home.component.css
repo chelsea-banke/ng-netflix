@@ -45,12 +45,13 @@
     right: 20px;
 }
 
-.cc{
+.carr{
     width: fit-content;
     height: fit-content;
+    position: relative;
 }
-#s-left, #s-right {
-    height: 80%;
+.s-left, .s-right {
+    height: 100%;
     background-color: white;
     float: right;
     position: absolute;
@@ -59,7 +60,7 @@
     border-radius: 0px;
     z-index: 10;
 }
-#s-right{
+.s-right{
     right: 0px;   
 }
 
@@ -93,6 +94,34 @@ ul::-webkit-scrollbar-thumb{
     border-radius: 5px;
 }
 
+ul .btn{
+    background-color: rgba(0, 0, 0, 0.781);
+    position: absolute;
+    top: -60px;
+    right: 5px;
+    color: white;
+    width: 30%;
+    font-size: 100%;
+}
+
+.play{
+    left: 5px;
+}
+
+ul .btn:hover{
+    display: block;
+}
+
+ul .btn img {
+    width: 40%;
+    /* z-index: 10; */
+    margin-top: -5px;
+}
+
+.play img{
+    width: 100%;
+}
+
 li{
     position: relative;
     margin: auto;
@@ -110,23 +139,21 @@ li p{
 }   
 li img{
     width: 24%;
+    transition: width 0.25s;
 }
 li:hover img{
     width: 30%;
     margin-top: -15px;
-    /* z-index: 5; */
-    /* position: absolute; */
     transition: width 0.5s;
+    transition-delay: 0.5s;
+    transition-property: width;
 }
 #content{
+    width: 100%;
     position: relative;
-    /* background-color: black; */
     margin-top: -250px;
-    /* z-index: 10; */
 }
 #content h2{
-    /* position: absolute; */
-    /* margin-top: -50px; */
     margin-left: 30px;
 }
 @media screen and (max-width: 1219px) {
@@ -138,6 +165,10 @@ li:hover img{
     #content{
         margin-top: -150px;
     }
+    ul li .btn{
+        top: -50px;
+        font-size: small;
+    }
 }
 @media screen and (max-width: 900px) {
     #content{
@@ -146,6 +177,9 @@ li:hover img{
     li img{
         width: 31%;
     }
+    li:hover img{
+        width: 35%;
+    }
     #content h2{
         font-size: medium;
     }
@@ -153,6 +187,23 @@ li:hover img{
 @media screen and (max-width: 765px) {
     #content{
         margin-top: -75px;
+    }
+}
+@media screen and (max-width: 725px) {
+    ul li .btn{
+        background-color: rgba(0, 0, 0, 0);
+        top: -20px;
+        width: fit-content;
+    }
+    ul li .btn img{
+        width: 25px;
+        margin-left: -10px;
+        background-color: black;
+        padding: 3px;
+        border-radius: 5px;
+    }
+    ul li .btn span{
+        display: none;
     }
 }
 @media screen and (max-width: 660px) {
@@ -212,5 +263,8 @@ li:hover img{
     }
     li img{
         width: 45%;
+    }
+    li:hover img{
+        width: 50%;
     }
 }

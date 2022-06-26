@@ -16,8 +16,8 @@
     <div>
         <h2>Trending Now</h2>
         <div class="carr">
-            <button class="btn" id="s-left" (click)="scroll('left', 'trending')">&lt;</button>
-            <button class="btn" id="s-right" (click)="scroll('right', 'trending')">&gt;</button>
+            <button class="btn s-left" (click)="scroll('left', 'trending')">&lt;</button>
+            <button class="btn s-right" (click)="scroll('right', 'trending')">&gt;</button>
             <ul id="trending">
                 <li *ngFor="let movie of Trending['results']">
                     <p>{{ movie['title'] }}</p>
@@ -25,6 +25,46 @@
                     <a href="">
                         <img [src]="'https://image.tmdb.org/t/p/w1280//'+movie['backdrop_path']" alt="">
                     </a>
+                    <button class="btn play">  <img src="../../../assets/images/white-play.png" alt="play"> <span> play</span></button>
+                    <button class="btn info"> <img src="../../../assets/images/white-info.svg" alt=""><span> info</span></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <div>
+        <h2>Comedy</h2>
+        <div class="carr">
+            <button class="btn s-left" (click)="scroll('left', 'comedy')">&lt;</button>
+            <button class="btn s-right" (click)="scroll('right', 'comedy')">&gt;</button>
+            <ul id="comedy">
+                <li *ngFor="let movie of comedy['results']">
+                    <p>{{ movie['title'] }}</p>
+                    <p>{{ movie['name'] }}</p>
+                    <a href="">
+                        <img [src]="'https://image.tmdb.org/t/p/w1280//'+movie['backdrop_path']" alt="">
+                    </a>
+                    <button class="btn play">  <img src="../../../assets/images/white-play.png" alt="play"> <span> play</span></button>
+                    <button class="btn info"> <img src="../../../assets/images/white-info.svg" alt=""><span> info</span></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <div>
+        <h2>Drama</h2>
+        <div class="carr">
+            <button class="btn s-left" (click)="scroll('left', 'drama')">&lt;</button>
+            <button class="btn s-right" (click)="scroll('right', 'drama')">&gt;</button>
+            <ul id="drama">
+                <li *ngFor="let movie of drama['results']">
+                    <p>{{ movie['title'] }}</p>
+                    <p>{{ movie['name'] }}</p>
+                    <a href="">
+                        <img [src]="'https://image.tmdb.org/t/p/w1280//'+movie['backdrop_path']" alt="">
+                    </a>
+                    <button class="btn play">  <img src="../../../assets/images/white-play.png" alt="play"> <span> play</span></button>
+                    <button class="btn info"> <img src="../../../assets/images/white-info.svg" alt=""><span> info</span></button>
                 </li>
             </ul>
         </div>
