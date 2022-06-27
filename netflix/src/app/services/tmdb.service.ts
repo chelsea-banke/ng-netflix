@@ -34,7 +34,16 @@ export class TmdbService {
     const url = this.trendingUrl + this.apiKey;
     const promise = new Promise((resolve, reject) => {
       this.http.get(url).subscribe(data => {
-        // console.log(data);
+        resolve(data);
+      })
+    })
+    return promise;
+  }
+
+  getMovie(id: number): Promise<any>{
+    const url = `${this.baseUrl}/movie/${id}?api_key=${this.apiKey}`;
+    const promise = new Promise((resolve, reject) => {
+      this.http.get(url).subscribe(data => {
         resolve(data);
       })
     })

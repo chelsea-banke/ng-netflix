@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   Trending: any;
   comedy: any;
   drama: any;
+  modalDetails: any = '';
 
   backdropImg: string = '';
   disInt: number = 0;
@@ -37,6 +38,14 @@ export class HomeComponent implements OnInit {
 
   }
 
+  getMov(id: number){
+    // console.log('mov-click');
+    this.tmdbService.getMovie(id).then(data => {
+      console.log(data);
+      this.modalDetails = data;
+    })
+  }
+  
   scroll(dirrection: string, id: string){
     const moveBy = this.window.screen.width/1.2;
     const elm = this.document.getElementById(id)
