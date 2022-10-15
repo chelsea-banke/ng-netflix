@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
 
     this.tmdbService.getTrending().then((data) => {
       this.Trending = data;
+      console.log(data);
       this.disInt = Math.floor(Math.random() * (this.Trending['results'].length));
       this.backdropImg = 'https://image.tmdb.org/t/p/w1280//' + this.Trending['results'][this.disInt]['backdrop_path'];
     });
@@ -38,8 +39,18 @@ export class HomeComponent implements OnInit {
 
   }
 
+  switchDetails(look: string, movie: any){
+    let arr: any[] = [];
+    switch (look){
+      case 'trending': {arr=this.Trending['results']; break}
+      case 'comedy': {arr=this.comedy['results']; break}
+      case 'drama': {arr=this.drama['results']; break}
+    }
+
+    this.modalDetails = arr[arr.indexOf(movie)];
+  }
+
   getMov(id: number){
-    // console.log('mov-click');
     this.tmdbService.getMovie(id).then(data => {
       console.log(data);
       this.modalDetails = data;
@@ -61,7 +72,7 @@ export class HomeComponent implements OnInit {
         behavior: 'smooth'
       })  
     }
-    else{ console.log(`invalid dirrection ${dirrection}`) }
+    else{ console.log(`invalid dirrection name ${dirrection}`) }
   }
 
 }

@@ -22,11 +22,15 @@
                 <li *ngFor="let movie of Trending['results']">
                     <p>{{ movie['title'] }}</p>
                     <p>{{ movie['name'] }}</p>
-                    <a href="">
+                    <a href="" data-toggle="modal" data-target="#infoModal" (click)="switchDetails('trending' ,movie)">
                         <img [src]="'https://image.tmdb.org/t/p/w1280//'+movie['backdrop_path']" alt="">
                     </a>
-                    <button class="btn play">  <img src="../../../assets/images/white-play.png" alt="play"> <span> play</span></button>
-                    <button class="btn info" type="button" data-toggle="modal" data-target="#infoModal" (click)="getMov(movie['id'])"> <img src="../../../assets/images/white-info.svg" alt=""><span> info</span></button>
+                    <button class="btn play"> 
+                        <img src="../../../assets/images/white-play.png" alt="play"> <span> play</span>
+                    </button>
+                    <button class="btn info" type="button" data-toggle="modal" data-target="#infoModal" (click)="switchDetails('trending' ,movie)"> 
+                         <img src="../../../assets/images/white-info.svg" alt=""><span> info</span>
+                    </button>
                 </li>
             </ul>
         </div>
@@ -41,11 +45,15 @@
                 <li *ngFor="let movie of comedy['results']">
                     <p>{{ movie['title'] }}</p>
                     <p>{{ movie['name'] }}</p>
-                    <a href="">
+                    <a href="" data-toggle="modal" data-target="#infoModal" (click)="switchDetails('comedy' ,movie)">
                         <img [src]="'https://image.tmdb.org/t/p/w1280//'+movie['backdrop_path']" alt="">
                     </a>
-                    <button class="btn play">  <img src="../../../assets/images/white-play.png" alt="play"> <span> play</span></button>
-                    <button class="btn info" type="button" data-toggle="modal" data-target="#infoModal" (click)="getMov(movie['id'])"> <img src="../../../assets/images/white-info.svg" alt=""><span> info</span></button>
+                    <button class="btn play">
+                        <img src="../../../assets/images/white-play.png" alt="play"> <span> play</span>
+                    </button>
+                    <button class="btn info" type="button" data-toggle="modal" data-target="#infoModal" (click)="switchDetails('comedy' ,movie)"> 
+                        <img src="../../../assets/images/white-info.svg" alt=""><span> info</span>
+                    </button>
                 </li>
             </ul>
         </div>
@@ -60,20 +68,74 @@
                 <li *ngFor="let movie of drama['results']">
                     <p>{{ movie['title'] }}</p>
                     <p>{{ movie['name'] }}</p>
-                    <a href="">
+                    <a href="" data-toggle="modal" data-target="#infoModal" (click)="switchDetails('drama' ,movie)">
                         <img [src]="'https://image.tmdb.org/t/p/w1280//'+movie['backdrop_path']" alt="">
                     </a>
                     <button class="btn play">  <img src="../../../assets/images/white-play.png" alt="play"> <span> play</span></button>
-                    <button class="btn info" type="button" data-toggle="modal" data-target="#infoModal" (click)="getMov(movie['id'])"> <img src="../../../assets/images/white-info.svg" alt=""><span> info</span></button>
+                    <button class="btn info" type="button" data-toggle="modal" data-target="#infoModal" (click)="switchDetails('drama' ,movie)">
+                         <img src="../../../assets/images/white-info.svg" alt=""><span> info</span>
+                    </button>
                 </li>
             </ul>
         </div>
     </div>
 </section>
+<br><br><br>
+<footer>
+    <p><a href="">Questions? Contact Us</a></p>
+    <br>
+    <div>
+        <ul class="links">
+            <li><a href="">FAQ</a></li>
+            <li><a href="">Help Center</a></li>
+            <li><a href="">Account</a></li>
+            <li><a href="">Media Center</a></li>
+            <li><a href="">Investor Relations</a></li>
+            <li><a href="">Jobs</a></li>
+            <li><a href="">Ways to Watch</a></li>
+            <li><a href="">Terms of Use</a></li>
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Cookie Preferences</a></li>
+            <li><a href="">Corporate Information</a></li>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Speed Test</a></li>
+            <li><a href="">Legal Notices</a></li>
+            <li><a href="">Only On Netflix</a></li>
+        </ul>
+    </div>
+    <p>Netflix Cameroon</p>
+</footer>
 
 <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg bg-dark" role="document">
-      <div class="modal-content bg-dark">
-            <img [src]="'https://image.tmdb.org/t/p/w1280//'+modalDetails['backdrop_path']" alt="">
+        <div class="modal-content bg-dark">
+            <div id="modal-img">
+                <img [src]="'https://image.tmdb.org/t/p/w1280//'+modalDetails['backdrop_path']" alt="">
+                <div class="modal-backdrop">
+                    <div class="modal-title">
+                        <h1>{{ modalDetails['name'] }}</h1>
+                        <h1>{{ modalDetails['title'] }}</h1>
+                    </div>
+                    <button class="btn modal-play">+ Play</button>
+                    <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">X</button>
+                </div>
+            </div>
+            <hr>
+            <div class="modal-desc">
+                <h4>overview</h4>
+                <p>{{ modalDetails['overview'] }}</p>
+                <br>
+                <div class="row r-it">
+                    <div class="col-md-6"><img [src]="'https://image.tmdb.org/t/p/w1280//'+modalDetails['poster_path']" class="poster-img" alt=""></div>
+                    <div class="col-md-6">
+                        <div><span class="it">Title:</span> {{ modalDetails['name'] }} {{ modalDetails['title'] }}</div>
+                        <!-- <div><span class="it">Title</span></div> -->
+                        <div><span class="it">Release Date:</span> {{ modalDetails['release_date'] }}</div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
     </div>
+    <!-- <div id="modal-fade"></div> -->
 </div>
